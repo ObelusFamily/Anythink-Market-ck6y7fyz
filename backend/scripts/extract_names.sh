@@ -13,7 +13,7 @@ FILE=$1
 if [ -f "$FILE" ]; then
     # echo "File '$FILE' exists."
     # echo "Searching for lines containing 'amazon.com'..."
-    grep -i "amazon.com" "$FILE" | awk '{print $3, $2}'
+    grep -i "amazon.com" "$FILE" | awk -F',' '{print $3, $2}'
 else
     echo "File '$FILE' does not eixts."
     exit 1
